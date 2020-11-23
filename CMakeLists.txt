@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(parser_args)
 
-set(CMAKE_CXX_STANDARD 11)
+add_library(${PROJECT_NAME} STATIC ParserArgs.cpp)
 
-add_library(parser_args STATIC ParserArgs.cpp)
+target_link_libraries(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
+add_library(test::ParserArgs ALIAS ${PROJECT_NAME})
