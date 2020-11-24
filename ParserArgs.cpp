@@ -92,6 +92,8 @@ bool ParserOpt::parsing() {
             } else if (el.mType == typeid(char).name() && strlen(optarg) == 1) {
                 el.mValid = true;
                 el.mResult = optarg;
+            } else if (el.mType == typeid(bool).name()) {
+                el.mValid = true;
             }
         }
     }
